@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coastal Interiors & Joinery - Professional Installation Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --gold-accent: #d4af37;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gold-accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover::after {
+            transform: scaleX(1);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--gold-accent);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1556909212-d5b604d0c90d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--gold-accent);
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            border: 2px solid transparent;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+            border-color: var(--gold-accent);
+        }
+        
+        .calculator-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold-accent);
+        }
+        
+        .calculator-form {
+            background-color: var(--light-color);
+            padding: 3rem;
+            border-radius: 10px;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .service-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        
+        .service-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .service-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+            vertical-align: middle;
+        }
+        
+        .service-table tr:nth-child(even) {
+            background-color: rgba(0,0,0,0.02);
+        }
+        
+        .service-table tr:hover {
+            background-color: rgba(0,0,0,0.05);
+        }
+        
+        .quantity-input {
+            width: 60px;
+            padding: 0.5rem;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .product-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 1rem;
+            border: 1px solid #ddd;
+        }
+        
+        .product-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .result {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .form-success {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+            text-align: center;
+            display: none;
+        }
+        
+        .services {
+            padding: 4rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .portfolio {
+            padding: 4rem 0;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .contacts-section {
+            padding: 4rem 0;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-card {
+            background-color: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 5px;
+        }
+        
+        .contact-card h3 {
+            color: var(--gold-accent);
+            margin-top: 0;
+        }
+        
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-link:hover {
+            color: var(--gold-accent);
+            text-decoration: underline;
+        }
+        
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            transition: color 0.3s;
+        }
+        
+        .social-link:hover {
+            color: var(--gold-accent);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .business-info {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .additional-services {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .delivery-box, .waste-box, .labor-box {
+            width: 32%;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .delivery-box:hover, .waste-box:hover, .labor-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .delivery-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .checkbox-group {
+            margin-bottom: 0.5rem;
+        }
+        
+        .checkbox-group input {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab-btn {
+            padding: 0.8rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--primary-color);
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-btn.active {
+            border-bottom: 3px solid var(--gold-accent);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        select {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 0.5rem;
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .additional-services {
+                flex-direction: column;
+            }
+            
+            .delivery-box, .waste-box, .labor-box {
+                width: 100%;
+                margin-bottom: 1.5rem;
+            }
+            
+            .delivery-image {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Coastal Interiors & Joinery</a>
+            <nav>
+                <ul>
+                    <li><a href="#calculator">Get a Quote</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Professional Installation Services</h1>
+            <p>Office furniture and kitchen installation services in Sydney, NSW. Quality workmanship guaranteed.</p>
+            <a href="#calculator" class="btn">Get a Free Quote</a>
+        </div>
+    </section>
+    
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h2 class="section-title">Request a Quote</h2>
+            
+            <div class="calculator-form">
+                <form id="quote-form" action="https://formspree.io/f/movenlqd" method="POST">
+                    <input type="hidden" name="_subject" value="New Installation Quote Request">
+                    <input type="hidden" name="_replyto" id="form-email">
+                    
+                    <input type="hidden" name="Имя" id="form-name">
+                    <input type="hidden" name="Телефон" id="form-phone">
+                    <input type="hidden" name="Дата_установки" id="form-date">
+                    <input type="hidden" name="Адрес_доставки_от" id="form-from">
+                    <input type="hidden" name="Адрес_доставки_до" id="form-to">
+                    <input type="hidden" name="Услуги" id="form-services">
+                    <input type="hidden" name="Утилизация" id="form-waste">
+                    <input type="hidden" name="Рабочие" id="form-labor">
+                    <input type="hidden" name="Количество_работников" id="form-workers">
+                    <input type="hidden" name="Часы_работы" id="form-labor-hours">
+                    <input type="hidden" name="Общая_стоимость" id="form-total">
+                    <input type="hidden" name="Стоимость_доставки" id="form-delivery-cost">
+
+                    <div class="tab-buttons">
+                        <button type="button" class="tab-btn active" data-tab="office">Office Furniture</button>
+                        <button type="button" class="tab-btn" data-tab="kitchen">Kitchen Cabinets</button>
+                    </div>
+
+                    <div id="office" class="tab-content active">
+                        <table class="service-table">
+                            <thead>
+                                <tr>
+                                    <th>Office Service Description</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/single-table.jpg" alt="Single table" class="product-image">
+                                            <span>Single table installation (non-adjustable)</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="single-table" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/back-to-back-tables.jpg" alt="Back to back tables" class="product-image">
+                                            <span>Back to Back tables (non-adjustable)</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="opposite-tables" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/adjustable-table.jpg" alt="Adjustable table" class="product-image">
+                                            <span>Single adjustable table installation</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="single-adjustable" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/adjustable-tables.jpg" alt="Adjustable tables" class="product-image">
+                                            <span>Back to Back adjustable tables</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="opposite-adjustable" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/meeting-table.jpg" alt="Meeting table" class="product-image">
+                                            <span>Meeting table installation</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="meeting-table" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/screen-divider.jpg" alt="Screen divider" class="product-image">
+                                            <span>Screen divider installation</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="screen-install" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/wiring.jpg" alt="Elsafe Softwiring Bundle" class="product-image">
+                                            <span>Installation GPO and softwiring (per table)</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="wiring" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/monitor-arms.jpg" alt="Monitor arms" class="product-image">
+                                            <span>Monitor arms installation</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="monitor-mount" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/locker.jpg" alt="Locker" class="product-image">
+                                            <span>Locker cabinet installation (one section)</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="locker" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/drawer.jpg" alt="Drawer" class="product-image">
+                                            <span>Unpacking under-desk drawer</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="unpack-drawer" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/chair.jpg" alt="Office chair" class="product-image">
+                                            <span>Chair assembly</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="chair-assembly" min="0" value="0"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="kitchen" class="tab-content">
+                        <table class="service-table">
+                            <thead>
+                                <tr>
+                                    <th>Kitchen Service Description</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/cabinet-single.jpg" alt="Single cabinet" class="product-image">
+                                            <span>Single cabinet</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="single-cabinet" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/cabinet-double.jpg" alt="Double cabinet" class="product-image">
+                                            <span>Double cabinet</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="double-cabinet" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/wall-cabinet-single.jpg" alt="Wall single cabinet" class="product-image">
+                                            <span>Wall single cabinet</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="wall-single" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/wall-cabinet-double.jpg" alt="Wall double cabinet" class="product-image">
+                                            <span>Wall double cabinet</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="wall-double" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/dishwasher-space.jpg" alt="Dishwasher space" class="product-image">
+                                            <span>Dishwasher space</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="dishwasher" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/corner-cabinet.jpg" alt="Corner cabinet" class="product-image">
+                                            <span>Corner cabinet</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="corner-cabinet" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/large-cabinet.jpg" alt="Large cabinet" class="product-image">
+                                            <span>Large cabinet</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="large-cabinet" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/large-double-cabinet.jpg" alt="Large double cabinet" class="product-image">
+                                            <span>Large double cabinet</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="large-double" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/kick-panel.jpg" alt="Kick panel" class="product-image">
+                                            <span>Kick panel</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="kick-panel" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/infill.jpg" alt="Infill" class="product-image">
+                                            <span>Infill</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="infill" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/panels.jpg" alt="Panels" class="product-image">
+                                            <span>Panels</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="panels" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/countertop.jpg" alt="Countertop" class="product-image">
+                                            <span>Countertop</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="countertop" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/sink-cutout.jpg" alt="Sink cutout" class="product-image">
+                                            <span>Sink cutout</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="sink-cutout" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/oven-space.jpg" alt="Oven space" class="product-image">
+                                            <span>Oven space</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="oven-space" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/fridge-space.jpg" alt="Fridge space" class="product-image">
+                                            <span>Fridge space</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="fridge-space" min="0" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-info">
+                                            <img src="images/bulkhead.jpg" alt="Bulkhead" class="product-image">
+                                            <span>Bulkhead</span>
+                                        </div>
+                                    </td>
+                                    <td><input type="number" class="quantity-input" name="bulkhead" min="0" value="0"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="additional-services">
+                        <div class="delivery-box">
+                            <h3>Delivery Service</h3>
+                              <img src="images/delivery-image.jpg" 
+         alt="Our delivery van" 
+         class="delivery-image"
+         onerror="this.src='https://i.imgur.com/JfQh3yP.png'">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="delivery-required" name="delivery-required">
+                                <label for="delivery-required">Require delivery service</label>
+                            </div>
+                            <div class="form-group" style="margin-top: 1rem;">
+                                <label for="from-address">From Address (optional):</label>
+                                <input type="text" id="from-address" placeholder="Pickup location" style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem;">
+                            </div>
+                            <div class="form-group">
+                                <label for="to-address">To Address (optional):</label>
+                                <input type="text" id="to-address" placeholder="Delivery location" style="width: 100%; padding: 0.5rem;">
+                            </div>
+                            <div class="form-group">
+                                <label for="delivery-km">Distance (km, optional):</label>
+                                <input type="number" id="delivery-km" min="0" placeholder="Enter km" style="width: 60px; padding: 0.5rem;">
+                            </div>
+                        </div>
+                        
+                        <div class="waste-box">
+                            <h3>Waste Removal</h3>
+                            <div class="product-info" style="margin-bottom: 1rem;">
+                                <img src="images/waste-removal.jpg" alt="Waste removal" class="product-image">
+                                <span>Professional waste removal service</span>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="waste-removal" name="waste-removal">
+                                <label for="waste-removal">Include waste removal</label>
+                            </div>
+                        </div>
+
+                        <div class="labor-box">
+                            <h3>Labor Service</h3>
+                            <div class="product-info" style="margin-bottom: 1rem;">
+                                <img src="images/labor.jpg" alt="Labor" class="product-image">
+                                <span>Professional installation team</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="labor-workers">Number of workers:</label>
+                                <select id="labor-workers" style="padding: 0.5rem; margin-bottom: 0.5rem;">
+                                    <option value="1">1 worker</option>
+                                    <option value="2" selected>2 workers</option>
+                                    <option value="3">3 workers</option>
+                                    <option value="4">4 workers</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="labor-hours">Hours needed (min 4):</label>
+                                <input type="number" id="labor-hours" min="4" value="4" style="width: 60px; padding: 0.5rem;">
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="labor-required" name="labor-required">
+                                <label for="labor-required">Request labor service</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result">
+                        <h3>Ready to Get Your Quote?</h3>
+                        <p>Please review your selections and submit your request.</p>
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Request a Quote</button>
+                    </div>
+                </form>
+
+                <div id="success-message" class="form-success">
+                    <h3>Thank You!</h3>
+                    <p>Your request has been submitted successfully.</p>
+                    <p>We'll contact you with a quote within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            
+            <div class="calculator-form">
+                <h3>Office Furniture Installation</h3>
+                <p>We provide professional installation services for all types of office furniture including:</p>
+                <ul>
+                    <li>Workstations and desks (standard and adjustable)</li>
+                    <li>Meeting and conference tables</li>
+                    <li>Storage solutions (lockers, cabinets)</li>
+                    <li>Monitor arms and cable management</li>
+                    <li>Chair assembly</li>
+                    <li>Screen dividers between workstations</li>
+                    <li>Elsafe GPO and softwiring installation</li>
+                </ul>
+                
+                <h3>Kitchen Installation</h3>
+                <ul>
+                    <li>Base and wall cabinet installation</li>
+                    <li>Countertop installation and cutouts</li>
+                    <li>Appliance space preparation</li>
+                    <li>Kick panels and infills</li>
+                    <li>Bulkhead installation</li>
+                </ul>
+                
+                <h3>Additional Services</h3>
+                <ul>
+                    <li>Furniture delivery to your location</li>
+                    <li>Professional waste removal</li>
+                    <li>Skilled labor team available (1-4 workers)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Our Work</h2>
+            <p style="text-align: center;">Check out our latest projects on Instagram <a href="https://instagram.com/Coastal_interiors_joinery" class="social-link"><i class="fab fa-instagram"></i> @Coastal_interiors_joinery</a></p>
+        </div>
+    </section>
+    
+    <section id="contact" class="contacts-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Contact Us</h2>
+            
+            <div class="contacts-grid">
+                <div class="contact-card">
+                    <h3>Phone</h3>
+                    <p><a href="sms:0404824645" class="contact-link">0404 824 645</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@coastalij.com" class="contact-link">info@coastalij.com</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Social Media</h3>
+                    <p>
+                        <a href="https://instagram.com/Coastal_interiors_joinery" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Business Information</h3>
+                    <p>ABN: 11680351615</p>
+                    <p>Sydney, NSW, Australia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>Coastal Interiors & Joinery PTY LTD</p>
+            <p class="business-info">Professional installation services in Sydney, NSW</p>
+            <p>&copy; 2024 All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Price lists (hidden from view)
+        const officePrices = {
+            'single-table': 80,
+            'opposite-tables': 160,
+            'single-adjustable': 120,
+            'opposite-adjustable': 240,
+            'meeting-table': 400,
+            'screen-install': 30,
+            'wiring': 10,
+            'monitor-mount': 15,
+            'locker': 70,
+            'unpack-drawer': 10,
+            'chair-assembly': 35
+        };
+        
+        const kitchenPrices = {
+            'single-cabinet': 60,
+            'double-cabinet': 80,
+            'wall-single': 70,
+            'wall-double': 90,
+            'dishwasher': 60,
+            'corner-cabinet': 80,
+            'large-cabinet': 120,
+            'large-double': 180,
+            'kick-panel': 50,
+            'infill': 50,
+            'panels': 80,
+            'countertop': 300,
+            'sink-cutout': 150,
+            'oven-space': 80,
+            'fridge-space': 80,
+            'bulkhead': 80
+        };
+        
+        const laborRate = 65; // per hour per worker
+        const minLaborHours = 4;
+        const deliveryBase = 500;
+        const deliveryRate = 2; // per km
+        const wasteMin = 300;
+        const wastePercentage = 0.15;
+        
+        // Tab functionality
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.tab).classList.add('active');
+            });
+        });
+        
+        // Form submission handler
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect customer info
+            const customerName = prompt("Please enter your name:");
+            if (!customerName) return;
+            
+            const customerEmail = prompt("Please enter your email address:");
+            if (!customerEmail) return;
+            
+            const customerPhone = prompt("Please enter your phone number:");
+            const installationDate = prompt("Preferred installation date (if known):");
+            
+            // Calculate services and totals
+            const services = [];
+            let total = 0;
+            
+            // Office services
+            document.querySelectorAll('#office .quantity-input').forEach(input => {
+                const quantity = parseInt(input.value) || 0;
+                if (quantity > 0) {
+                    const serviceName = input.closest('tr').querySelector('.product-info span').textContent;
+                    services.push(`${serviceName}: ${quantity} units`);
+                    total += quantity * officePrices[input.name];
+                }
+            });
+            
+            // Kitchen services
+            document.querySelectorAll('#kitchen .quantity-input').forEach(input => {
+                const quantity = parseInt(input.value) || 0;
+                if (quantity > 0) {
+                    const serviceName = input.closest('tr').querySelector('.product-info span').textContent;
+                    services.push(`${serviceName}: ${quantity} units`);
+                    total += quantity * kitchenPrices[input.name];
+                }
+            });
+            
+            // Labor cost
+            let laborCost = 0;
+            if (document.getElementById('labor-required').checked) {
+                const workers = parseInt(document.getElementById('labor-workers').value) || 1;
+                const hours = Math.max(minLaborHours, parseInt(document.getElementById('labor-hours').value) || minLaborHours);
+                laborCost = hours * laborRate * workers;
+                services.push(`Labor service: ${workers} worker(s) for ${hours} hours`);
+                total += laborCost;
+            }
+            
+            // Waste removal cost
+            let wasteCost = 0;
+            if (document.getElementById('waste-removal').checked) {
+                wasteCost = Math.max(wasteMin, total * wastePercentage);
+                services.push("Waste removal: Included");
+                total += wasteCost;
+            }
+            
+            // Delivery cost
+            let deliveryCost = 0;
+            const fromAddress = document.getElementById('from-address').value;
+            const toAddress = document.getElementById('to-address').value;
+            const deliveryKm = parseInt(document.getElementById('delivery-km').value) || 0;
+            
+            if (document.getElementById('delivery-required').checked) {
+                deliveryCost = deliveryBase + (deliveryKm * deliveryRate);
+                services.push(`Delivery service requested`);
+                if (fromAddress) services.push(`From: ${fromAddress}`);
+                if (toAddress) services.push(`To: ${toAddress}`);
+                if (deliveryKm > 0) services.push(`Distance: ${deliveryKm} km`);
+                total += deliveryCost;
+            }
+            
+            // Set form values
+            document.getElementById('form-name').value = customerName;
+            document.getElementById('form-email').value = customerEmail;
+            document.getElementById('form-phone').value = customerPhone || 'Not provided';
+            document.getElementById('form-date').value = installationDate || 'Not specified';
+            document.getElementById('form-from').value = fromAddress;
+            document.getElementById('form-to').value = toAddress;
+            document.getElementById('form-services').value = services.join('\n');
+            document.getElementById('form-waste').value = document.getElementById('waste-removal').checked ? 'Yes' : 'No';
+            document.getElementById('form-labor').value = document.getElementById('labor-required').checked ? 'Yes' : 'No';
+            document.getElementById('form-workers').value = document.getElementById('labor-workers').value;
+            document.getElementById('form-labor-hours').value = document.getElementById('labor-hours').value;
+            document.getElementById('form-total').value = `$${total}`;
+            document.getElementById('form-delivery-cost').value = `$${deliveryCost}`;
+            
+            // Submit form via Fetch API
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    document.getElementById('quote-form').style.display = 'none';
+                    document.getElementById('success-message').style.display = 'block';
+                    
+                    // Reset form after 5 seconds
+                    setTimeout(() => {
+                        document.getElementById('quote-form').reset();
+                        document.querySelectorAll('.quantity-input').forEach(input => input.value = 0);
+                        document.getElementById('labor-hours').value = minLaborHours;
+                        document.getElementById('labor-workers').value = 2;
+                        document.getElementById('quote-form').style.display = 'block';
+                        document.getElementById('success-message').style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                alert('Error submitting form. Please contact us directly at info@coastalij.com');
+            });
+        });
+    </script>
+</body>
+</html>
